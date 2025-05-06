@@ -41,7 +41,7 @@ body {
 
 .navbar-menu a {
   color: #e5a016;
-  /* text-decoration: none; */
+  text-decoration: underline;
   font-size: 1.3rem;
   font-family: Arial, sans-serif;
   transition: color 0.2s;
@@ -214,7 +214,7 @@ body {
 }
 
 /*  */
-.carousel-img {
+/* .carousel-img {
   height: 500px;
   object-fit: cover;
 }
@@ -231,7 +231,7 @@ body {
     height: 180px;
     object-fit: cover;
   }
-}
+} */
 
 /*  */
 .custom-image {
@@ -380,7 +380,7 @@ h2 {
   display: block;
   border-radius: 0; /* removes image corner rounding */
 }
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .slider .img {
     height: 180px;
   }
@@ -389,6 +389,42 @@ h2 {
 @media screen and (max-width: 480px) {
   .slider .img {
     height: 150px;
+  }
+} */
+
+
+/*  */
+.carousel-img {
+  width: 100%;
+  height: auto;
+  max-height: 90vh; /* banner never gets too tall */
+  object-fit: cover; /* fills the width and height nicely */
+  display: block;
+}
+
+/* Responsive height adjustments */
+
+@media (max-width: 1024px) {
+  .carousel-img {
+    max-height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-img {
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-img {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  .carousel-img {
+    max-height: 250px;
   }
 }
 
@@ -569,8 +605,8 @@ h1.our {
 
 /*  */
 .happiness-title {
-  color: red;
-  font-size: 36px;
+  color: rgb(193, 47, 47);
+  font-size: 30px;
   font-weight: bold;
   text-align: center;
   margin-top: 30px;
@@ -581,10 +617,10 @@ h1.our {
 .cta-button {
   background-color: #f59e0b;
   /* gold */
-  color: red;
+  color: rgb(213, 50, 50);
   /* border: 2px solid red; */
   padding: 12px 25px;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s, transform 0.2s;
@@ -618,21 +654,21 @@ h1.our {
 .cta-button {
   background-color: white;
   color: rgb(235, 9, 9);
-  border: 3px solid red;
+  border: 2px solid red;
   padding: 12px 25px;
   font-size: 25px;
-  font-weight: bold;
+  /* font-weight: bold; */
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s, transform 0.2s;
   border-radius: 8px;
   display: block;
   margin: 20px auto;
-  animation: blink 1s infinite;
+  animation: blink 2s infinite;
 }
 
 .cta-button:hover {
   /* background-color: royalblue; */
-  color: rgb(136, 9, 9);
+  color: rgba(9, 136, 17, 0.992);
   transform: scale(1.05);
 }
 
