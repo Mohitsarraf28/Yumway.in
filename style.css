@@ -510,7 +510,7 @@ h2 {
   border-color: #5755c8;
   box-shadow: 0 0 0 0.25rem rgba(87, 85, 200, 0.15);
 }
-
+/* 
 .btn-submit {
   background-color: #e5a016;
   color: white;
@@ -521,13 +521,13 @@ h2 {
   font-weight: 600;
   transition: all 0.3s ease;
   margin-top: 15px;
-}
+} */
 
-.btn-submit:hover {
+/* .btn-submit:hover {
   background-color: #5755c8;
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(87, 85, 200, 0.3);
-}
+} */
 
 /* Responsive styles for contact form */
 @media (max-width: 768px) {
