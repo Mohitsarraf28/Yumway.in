@@ -39,7 +39,7 @@ body {
   
   .navbar-menu a {
     color: #e5a016;
-    /* text-decoration: none; */
+    text-decoration: underline;
     font-size: 1.5rem;
     font-family: Arial, sans-serif;
     transition: color 0.2s;

@@ -7,11 +7,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: white !important; /* !important to override system dark theme */
+  background-color: white !important;
+  /* !important to override system dark theme */
   padding: 0 40px;
-  height: 90px;
+  height: 68px;
   position: relative;
-  color-scheme: light; /* Prevent dark mode color inversion */
+  color-scheme: light;
+  /* Prevent dark mode color inversion */
 }
 
 .navbar-logo {
@@ -22,8 +24,8 @@ body {
 }
 
 .navbar-logo img {
-  max-height: 90px;
-  max-width: 250px;
+  max-height: 70px;
+  max-width: 220px;
   object-fit: contain;
   padding-left: 40px;
   transition: max-height 0.2s, max-width 0.2s;
@@ -40,7 +42,7 @@ body {
 .navbar-menu a {
   color: #e5a016;
   /* text-decoration: none; */
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-family: Arial, sans-serif;
   transition: color 0.2s;
   padding-right: 10px;
@@ -57,14 +59,16 @@ body {
   justify-content: center;
   cursor: pointer;
   margin-left: 10px;
-  z-index: 100; /* Ensure it's clickable */
+  z-index: 100;
+  /* Ensure it's clickable */
 }
 
 .navbar-toggle span {
   display: block;
   height: 3px;
   width: 28px;
-  background-color: #333; /* Darker color for visibility */
+  background-color: #333;
+  /* Darker color for visibility */
   margin: 5px 0;
   border-radius: 2px;
   transition: all 0.3s ease-in-out;
@@ -149,7 +153,8 @@ body {
     text-align: center;
     padding: 8px 0;
     width: 100%;
-    color: #e5a016 !important; /* Force text color */
+    color: #e5a016 !important;
+    /* Force text color */
   }
 
   .navbar-menu {
@@ -191,10 +196,41 @@ body {
     opacity: 1;
   }
 
-  .navbar-menu.active a:nth-child(1) { transition-delay: 0.1s; }
-  .navbar-menu.active a:nth-child(2) { transition-delay: 0.2s; }
-  .navbar-menu.active a:nth-child(3) { transition-delay: 0.3s; }
-  .navbar-menu.active a:nth-child(4) { transition-delay: 0.4s; }
+  .navbar-menu.active a:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+
+  .navbar-menu.active a:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+
+  .navbar-menu.active a:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+
+  .navbar-menu.active a:nth-child(4) {
+    transition-delay: 0.4s;
+  }
+}
+
+/*  */
+.carousel-img {
+  height: 500px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .carousel-img {
+    height: 250px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-img {
+    height: 180px;
+    object-fit: cover;
+  }
 }
 
 /*  */
@@ -207,23 +243,28 @@ body {
 
 /* Carousel control */
 #carouselExampleCaptions .carousel-item img {
-  height: 600px; /* Sets a fixed height for carousel images */
+  height: 600px;
+  /* Sets a fixed height for carousel images */
   width: 100%;
-  object-fit: cover; /* Makes images cover the container, cropping height as needed */
-  object-position: center; /* Centers the image focus point */
-  background-color: #000; /* Optional: adds a background color for letterboxing */
+  object-fit: cover;
+  /* Makes images cover the container, cropping height as needed */
+  object-position: center;
+  /* Centers the image focus point */
+  background-color: #000;
+  /* Optional: adds a background color for letterboxing */
 }
 
 /* Mobile-specific adjustments for carousel images */
 @media (max-width: 768px) {
   #carouselExampleCaptions .carousel-item img {
-    object-position: left center; /* Focus on the left side of images on mobile */
+    object-position: left center;
+    /* Focus on the left side of images on mobile */
   }
 }
 
 /* Fixed position carousel indicators */
 .carousel-indicators {
-  position: absolute; 
+  position: absolute;
   bottom: 20px;
   left: 0;
   right: 0;
@@ -281,59 +322,12 @@ body {
   opacity: 1;
 }
 
-/* /* .hero-section {
-  max-width: 800px;
-  margin: 60px auto;
-  margin-top: 0px;
-  padding: 20px;
-  background: linear-gradient(135deg, #fffdf9, #ffe9d6);
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  padding-top: 1000px;
-}
 
-.hero-section h1 {
-  font-size: 48px;
-  color: #5755c8;
-  margin-bottom: 20px;
-  letter-spacing: 2px;
-}
+/*  */
 
-.hero-section .tagline {
-  font-size: 22px;
-  font-weight: 600;
-  color: #d35400;
-  margin-bottom: 20px;
-}
-
-.hero-section .desc {
-  font-size: 18px;
-  color: #000000;
-  margin-bottom: 30px;
-  line-height: 1.6;
-}
-
-.hero-section .highlights {
-  list-style: none;
-  padding: 0;
-  font-size: 17px;
-  color: #000000;
-  margin-bottom: 30px;
-}
-
-.hero-section .highlights li {
-  margin: 8px 0;
-}
-
-.hero-section .welcome {
-  font-size: 20px;
-  font-weight: bold;
-  color: #c0392b;
-}  */
 
 /* Card Image Fit */
-h2{
+h2 {
   align-items: center;
 }
 
@@ -355,6 +349,7 @@ h2{
 /* Owl Carousel Styling */
 .slider.owl-carousel {
   position: relative;
+  padding: 10px;
 }
 
 .slider .card {
@@ -363,6 +358,7 @@ h2{
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  height: 100%; /* ensure it fills */
 }
 
 .slider .card:hover {
@@ -371,33 +367,32 @@ h2{
 
 .slider .img {
   width: 100%;
-  height: 350px; /* Fixed height for square images */
+  height: 290px; /* You can adjust this height */
   overflow: hidden;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .slider .img img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures image fills the square without distortion */
+  /* object-fit: cover; */
   display: block;
+  border-radius: 0; /* removes image corner rounding */
+}
+@media screen and (max-width: 768px) {
+  .slider .img {
+    height: 180px;
+  }
 }
 
-.slider .card-content {
-  padding: 15px;
-  text-align: center;
+@media screen and (max-width: 480px) {
+  .slider .img {
+    height: 150px;
+  }
 }
 
-.slider .card-content h3 {
-  font-size: 20px;
-  color: #333;
-  margin-bottom: 10px;
-}
 
-.slider .card-content p {
-  font-size: 14px;
-  color: #666;
-  margin: 0;
-}
 
 /* Owl Carousel Navigation */
 .owl-nav {
@@ -429,7 +424,8 @@ h2{
 /* Responsive Design */
 @media (max-width: 768px) {
   .slider .img {
-    height: 200px; /* Smaller square for mobile */
+    height: 200px;
+    /* Smaller square for mobile */
   }
 
   .carousel-section h2 {
@@ -502,7 +498,7 @@ h2{
   .contact-form-container {
     padding: 20px;
   }
-  
+
   .btn-submit {
     width: 100%;
     padding: 10px;
@@ -512,22 +508,24 @@ h2{
 .hero-section {
   /* background: linear-gradient(to right, #fff5cc, #ffe6e6); */
   text-align: center;
-  padding: 60px 20px;
+  padding: 50px 10px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(70, 150, 142, 0.426);
 }
 
 .hero-section h1 {
   font-size: 42px;
-  color: #d97706; /* warm yellow */
+  color: #d97706;
+  /* warm yellow */
   margin-bottom: 20px;
 }
 
 .hero-section p {
-  font-size: 28px;
-  color: #554ae5;
-  margin: 8px 0;
+  font-size: 30px;
+  font-weight: 500;
+  color: #342abc;
+  /* margin: 8px 0; */
 }
 
 .hero-section .smile {
@@ -546,14 +544,17 @@ h2{
 .hero-section .welcome {
   margin-top: 30px;
   font-size: 22px;
-  color: #b91c1c; /* deep red */
+  color: #b91c1c;
+  /* deep red */
 }
 
 .hero-section .welcome strong {
-  color: #f59e0b; /* gold */
+  color: #f59e0b;
+  /* gold */
 }
+
 /* our event */
-h1.our{
+h1.our {
   text-align: center;
   font-size: 42px;
   font-weight: 700;
@@ -563,44 +564,9 @@ h1.our{
   padding-bottom: 15px;
   font-family: Arial, sans-serif;
 }
+
 /* footer */
-.footer {
-  background-color: #b91c1c; /* red */
-  color: white;
-  padding: 30px 20px;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
 
-.footer-content .contact {
-  font-size: 18px;
-  margin-bottom: 15px;
-}
-
-.footer .social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 15px;
-}
-
-.footer .social-icons img {
-  width: 30px;
-  height: 30px;
-  transition: transform 0.3s ease;
-}
-
-.footer .social-icons img:hover {
-  transform: scale(1.2);
-  filter: brightness(1.2);
-}
-
-.footer p {
-  margin: 5px 0;
-  font-size: 14px;
-}
 /*  */
 .happiness-title {
   color: red;
@@ -613,7 +579,8 @@ h1.our{
 }
 
 .cta-button {
-  background-color: #f59e0b; /* gold */
+  background-color: #f59e0b;
+  /* gold */
   color: red;
   /* border: 2px solid red; */
   padding: 12px 25px;
@@ -635,14 +602,22 @@ h1.our{
 
 
 @keyframes blink {
-  0%   { opacity: 1; }
-  50%  { opacity: 0.5; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .cta-button {
   background-color: white;
-  color: red;
+  color: rgb(235, 9, 9);
   border: 3px solid red;
   padding: 12px 25px;
   font-size: 25px;
@@ -657,7 +632,7 @@ h1.our{
 
 .cta-button:hover {
   /* background-color: royalblue; */
-  color: rgb(204, 23, 23);
+  color: rgb(136, 9, 9);
   transform: scale(1.05);
 }
 
@@ -671,15 +646,18 @@ h1.our{
 }
 
 .logo-img {
-  width: 100px;     /* 👈 Isko aap change kar sakte ho: 120px, 150px, jitna chahiye */
-  height: 100px;     /* Auto se proportion maintain rahega */
+  width: 100px;
+  /* 👈 Isko aap change kar sakte ho: 120px, 150px, jitna chahiye */
+  height: 100px;
+  /* Auto se proportion maintain rahega */
   margin-right: 10px;
   transition: transform 0.3s ease;
   cursor: pointer;
 }
 
 .logo-img:hover {
-  transform: scale(1.1); /* Hover effect */
+  transform: scale(1.1);
+  /* Hover effect */
 }
 
 .hero-wrapper {
@@ -695,7 +673,7 @@ h1.our{
   height: 500px;
   object-fit: contain;
   margin-bottom: 20px;
-  padding-right: 150px;
+  padding-right: 1500px;
   /* padding-bottom: 250px; */
   padding-left: 10px;
 }
@@ -721,4 +699,37 @@ h1.our{
     margin-right: 30px;
     margin-bottom: 0;
   }
+
 }
+
+/*  */
+.yum-logo-inline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.yum-logo-icon {
+  height: 16px;  /* 👈 reduced height to match text */
+  width: auto;
+  vertical-align: middle;
+}
+
+.yum-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #291FBE; /* same color as other text */
+}
+
+@media (max-width: 768px) {
+  .yum-logo-icon {
+    height: 14px;
+  }
+  .yum-text {
+    font-size: 1rem;
+  }
+}
+/* slider */
+
