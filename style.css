@@ -767,5 +767,120 @@ h1.our {
     font-size: 1rem;
   }
 }
-/* slider */
+/* footer */
 
+footer {
+  background-color: var(--dark-bg);
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-logo {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--secondary-color);
+  font-family: 'Playfair Display', serif;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--secondary-color);
+}
+
+.social-icons {
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 20px;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: var(--secondary-color);
+}
+
+.copyright {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.tagline {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--secondary-color);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--light-bg);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    z-index: 10;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-menu.active {
+    display: flex;
+  }
+  
+  .navbar-toggle {
+    display: flex;
+  }
+  
+  .navbar-toggle.open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  
+  .navbar-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .navbar-toggle.open span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  
+  .hero h1 {
+    font-size: 32px;
+  }
+  
+  .section-title {
+    font-size: 28px;
+  }
+  
+  .values-container {
+    grid-template-columns: 1fr;
+  }
+}
