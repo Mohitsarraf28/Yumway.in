@@ -1,120 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Styled Navbar</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 30px;
-      background-color: #ffffff;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .navbar-logo img {
-      height: 50px;
-    }
-
-    .navbar-menu {
-      display: flex;
-      gap: 25px;
-      align-items: center;
-    }
-
-    .navbar-menu a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      font-size: 16px;
-      transition: color 0.3s ease;
-    }
-
-    .navbar-menu a:hover {
-      color: #ff6600;
-    }
-
-    .navbar-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .navbar-toggle span {
-      height: 3px;
-      width: 25px;
-      background: #333;
-      margin: 4px 0;
-      transition: 0.4s;
-    }
-
-    @media (max-width: 768px) {
-      .navbar-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 30px;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      }
-
-      .navbar-menu.show {
-        display: flex;
-      }
-
-      .navbar-toggle {
-        display: flex;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Production - Yumway.in</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8f8f8;
+        }
+        .navbar {
+            background: #333;
+            padding: 15px 0;
+        }
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .navbar li {
+            margin: 0 20px;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.2s;
+        }
+        .navbar a:hover {
+            color: #ff9800;
+        }
+        .production-section {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 32px;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        .production-section img {
+            width: 300px;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+            background: #eee;
+        }
+        .production-content {
+            flex: 1;
+        }
+        .production-content h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .production-content p {
+            color: #555;
+            line-height: 1.6;
+        }
+        @media (max-width: 700px) {
+            .production-section {
+                flex-direction: column;
+                padding: 16px;
+            }
+            .production-section img {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Production</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="navbar-logo">
-      <img src="output-onlinepngtools-removebg-preview.png" alt="Logo" />
-    </div>
-    <div class="navbar-toggle" id="navbar-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <div class="navbar-menu" id="navbar-menu">
-      <a href="index.html"><img src="home.png" alt="Home" style="width: 18px; margin-right: 5px; vertical-align: middle;">Home</a>
-      <a href="#">Products</a>
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact Us</a>
-    </div>
-  </nav>
-
-  <script>
-    const toggle = document.getElementById('navbar-toggle');
-    const menu = document.getElementById('navbar-menu');
-
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('show');
-    });
-  </script>
-
+    <!-- Production Section -->
+    <section class="production-section">
+        <img src="kumar.jpg" alt="Production Image">
+        <div class="production-content">
+            <h2>Our Production</h2>
+            <p>
+                Welcome to our production section! Here, we ensure the highest quality standards in every product we make. 
+                Our state-of-the-art facility is equipped with modern technology and skilled professionals dedicated to delivering excellence.
+            </p>
+            <p>
+                You can add your own image by replacing <b>your-image.jpg</b> with your desired image file in the <code>img</code> tag above.
+            </p>
+        </div>
+    </section>
 </body>
 </html>

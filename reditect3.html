@@ -10,51 +10,109 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <style>
-    .contact-wrapper {
-        background: #f9f9f9;
-        padding: 40px 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+    /* dropdown */
+    /* ===== Dropdown Styling Start ===== */
 
-    .logo-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .logo-image {
-        max-width: 100%;
-        height: auto;
-        max-height: 200px;
-    }
-
-    .contact-form-container {
-        background-color: white;
-        padding: 30px;
+    .navbar .dropdown-menu {
+        background-color: #ffffff;
         border-radius: 8px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        min-width: 200px;
     }
 
-    .heading {
-        font-size: 2rem;
-        margin-bottom: 25px;
-        text-align: center;
-        font-weight: 600;
+    .navbar .dropdown-item {
         color: #333;
+        font-size: 1rem;
+        padding: 10px 15px;
+        transition: background-color 0.3s;
     }
 
-    .btn-submit {
-        background-color: #ff6600;
-        color: white;
-        padding: 10px 25px;
-        border: none;
-        border-radius: 5px;
-        transition: background 0.3s ease;
+    .navbar .dropdown-item:hover {
+        background-color: #f2f2f2;
+        color: #ff6600;
     }
 
-    .btn-submit:hover {
-        background-color: #e65c00;
+    /* Responsive Fix */
+    @media (max-width: 991.98px) {
+        .navbar .dropdown-menu {
+            background-color: #f8f9fa;
+            box-shadow: none;
+            border-radius: 0;
+        }
+
+        .navbar .dropdown-item {
+            color: #000;
+            border-bottom: 1px solid #ddd;
+        }
     }
+
+    /* ===== Dropdown Styling End ===== */
+
+    /*  */
+    .home-icon {
+        filter: invert(0%) !important;
+        /* Always black */
+    }
+
+    /* Logo Styling */
+    .navbar-brand img {
+        height: 50px;
+    }
+
+    /* Nav Links Styling */
+    .nav-link {
+        font-weight: 600;
+        font-size: 1.4rem;
+        color: #ffffff !important;
+        /* default text color */
+        transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+        color: #ff6600 !important;
+        /* hover color */
+    }
+
+    /* Home Icon Styling */
+    .home-icon {
+        width: 20px;
+        vertical-align: middle;
+        margin-right: 5px;
+        filter: invert(0%) !important;
+        /* always black */
+    }
+
+    /* Dark mode support */
+    @media (prefers-color-scheme: dark) {
+        .navbar {
+            background-color: #f5f1f1 !important;
+        }
+
+        .nav-link {
+            color: #ffa500 !important;
+        }
+
+        .nav-link:hover {
+            color: #07022e !important;
+        }
+
+        .home-icon {
+            filter: invert(0%) !important;
+            /* force black icon even in dark mode */
+        }
+    }
+
+    /* Center logo in mobile */
+    @media (max-width: 991.98px) {
+        .navbar-brand.mx-auto {
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+
+
 
     /*  */
     .french-fries-section {
@@ -101,47 +159,105 @@
     .btn-order:hover {
         background-color: #e65c00;
     }
+
+    /* video */
+    .french-fries-section {
+        background-color: #000;
+        color: white;
+        padding: 40px 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(255, 165, 0, 0.1);
+    }
+
+    /* Make video responsive */
+    .video-responsive {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(255, 165, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .video-responsive:hover {
+        transform: scale(1.05);
+    }
 </style>
 
 <body>
-    <nav class="navbar">
-        <div class="navbar-logo">
-            <img src="output-onlinepngtools-removebg-preview.png" alt="Logo">
-        </div>
-        <div class="navbar-toggle" id="navbar-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="navbar-menu" id="navbar-menu">
-
-            <a href="index.html">
-                <img src="home.png" alt="Home Icon" style="width: 20px; vertical-align: middle; margin-right: 5px;">
-                <!-- Home -->
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-light px-3 py-2">
+        <div class="container-fluid">
+            <!-- Logo Centered in Mobile -->
+            <a class="navbar-brand mx-auto d-lg-none" href="#">
+                <img src="output-onlinepngtools-removebg-preview.png" alt="Logo" style="height: 50px;">
             </a>
-            <a href="#">Products</a>
-            <!-- <a href="#">Recipe</a> -->
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact Us</a>
-            <!-- <a href="#"></a>
-          <a href="#">Product</a> -->
+
+            <!-- Toggler for Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu + Logo (Desktop) -->
+            <div class="collapse navbar-collapse justify-content-between" id="navbarMenu">
+                <a class="navbar-brand d-none d-lg-block" href="#">
+                    <img src="output-onlinepngtools-removebg-preview.png" alt="Logo" style="height: 50px;">
+                </a>
+
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <img src="home.png" alt="Home"
+                                style="width: 20px; vertical-align: middle; margin-right: 5px;" class="home-icon">
+                            Home
+                        </a>
+                    </li>
+
+                    <!-- Dropdown Start -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="productDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Products
+                        </a>
+                       <ul class="dropdown-menu" aria-labelledby="productDropdown">
+                            <li><a class="dropdown-item" href="redirect1.html">French Fries</a></li>
+                            <li><a class="dropdown-item" href="burgerpatti.html">Burger Patti</a></li>
+                            <li><a class="dropdown-item" href="potatoweges.html">Potato Wedges</a></li>
+                            <li><a class="dropdown-item" href="reditect3.html">Aloo Tikki</a></li>
+                            <li><a class="dropdown-item" href="redirect2.html">Hash Brown</a></li>
+                            <li><a class="dropdown-item" href="garlic.html">Garlic</a></li>
+                            <li><a class="dropdown-item" href="reditect4.html">Potato Flakes</a></li>
+                        </ul>
+                    </li>
+                    <!-- Dropdown End -->
+
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
+
+    <!--  -->
+
+
     <!-- image -->
     <div class="container french-fries-section mt-5">
         <div class="row align-items-center">
-            <!-- Image Left -->
+            <!-- Video Left -->
             <div class="col-md-6 text-center">
-                <img src="allo1.jpg" alt="French Fries" class="img-fluid fries-image" />
+                <video class="video-responsive fries-video" autoplay muted loop playsinline>
+                    <source src="video3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
 
             <!-- Text Right -->
             <div class="col-md-6 fries-content">
                 <h2 class="fries-title">Allo Takki</h2>
                 <p class="fries-description">
-                    Aloo Tikki is a popular Indian street food snack made from boiled and mashed potatoes, flavored with a blend of spices, herbs, and sometimes stuffed with peas or lentils. The term "Aloo" means potato, and "Tikki" refers to a small cutlet or patty. Crispy on the outside and soft on the inside, Aloo Tikki is a beloved dish enjoyed by people of all ages across India and beyond.
+                    To prepare hash browns, grated potatoes are first squeezed to remove excess moisture...
                 </p>
-                <!-- <a href="order.html" class="btn btn-order">Order Now</a> -->
             </div>
         </div>
     </div>
