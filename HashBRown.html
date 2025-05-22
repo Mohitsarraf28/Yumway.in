@@ -2,159 +2,406 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yumway</title>
-    <link rel="stylesheet" href="style1.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yumway - Blue Navbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        /* ==== NAVBAR STYLING ==== */
+        body {
+            margin: 0;
+            font-family: 'Helvetica', sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #121C4D;
+            padding: 0 20px;
+            height: 80px;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        /* Left container: logo + marquee */
+        .navbar-left {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .navbar-logo img {
+            max-height: 60px;
+            object-fit: contain;
+            padding-left: 15px;
+        }
+
+        /* Marquee */
+        .navbar-marquee-wrapper {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .marquee-container {
+            position: absolute;
+            white-space: nowrap;
+            animation: marquee 10s linear infinite;
+        }
+
+        .navbar-marquee {
+            color: #fcfbf9;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            45% { transform: translateX(50%); }
+            55% { transform: translateX(50%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Toggle (mobile) */
+        .navbar-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .navbar-toggle span {
+            height: 3px;
+            width: 25px;
+            background-color: #fff;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* Navbar menu */
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+            gap: 17px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: stretch;
+                height: auto;
+            }
+
+            .navbar-menu {
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+                background-color: #121C4D;
+            }
+
+            .navbar-menu.active {
+                display: flex !important;
+            }
+
+            .navbar-left {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .navbar-logo {
+                text-align: center;
+                margin-bottom: 5px;
+            }
+
+            .navbar-marquee-wrapper {
+                width: 100%;
+                max-width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .navbar-marquee {
+                font-size: 14px;
+            }
+
+            .navbar-toggle {
+                display: flex;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            .navbar-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #121C4D;
+                margin-top: 10px;
+            }
+
+            .navbar-menu.active {
+                display: flex;
+            }
+
+            .navbar-menu a {
+                text-align: center;
+                width: 100%;
+                padding: 10px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+                background-color: #222;
+            }
+
+            .dropdown-content a {
+                color: #fff;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: none;
+            }
+
+            .dropdown.open .dropdown-content {
+                display: block;
+            }
+
+            /* Ensure product section doesn’t shift */
+            .french-fries-section {
+                margin-top: 5rem; /* Increased margin on mobile */
+            }
+        }
+
+        .navbar-menu a {
+            color: #fffefc;
+            text-decoration: underline;
+            font-size: 1rem;
+            font-family: Helvetica, sans-serif;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .navbar-menu a:hover {
+            color: white;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropbtn {
+            color: #f5f4f2;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            font-family: Helvetica, sans-serif;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #475c9b;
+            min-width: 180px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            border-radius: 4px;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown-content a {
+            color: #e5a016;
+            padding: 10px 15px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #334b93;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .french-fries-section {
+            background-color: #121C4D;
+            color: white;
+            padding: 40px 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(255, 165, 0, 0.1);
+            margin-top: 3rem; /* Default margin for desktop */
+        }
+
+        .fries-image {
+            max-width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .fries-image:hover {
+            transform: scale(1.05);
+        }
+
+        .fries-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffa500;
+            margin-bottom: 20px;
+            padding-top: 10px;
+
+        }
+
+        .fries-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn-order {
+            background-color: #ff6600;
+            padding: 10px 25px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+
+        .btn-order:hover {
+            background-color: #e65c00;
+        }
+
+        /* Desktop-specific styling for Read More content */
+        @media (min-width: 769px) {
+            #moreInfo {
+                padding: 20px;
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 8px;
+            }
+        }
+    </style>
 </head>
-<style>
-    .contact-wrapper {
-        background: #f9f9f9;
-        padding: 40px 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .logo-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .logo-image {
-        max-width: 100%;
-        height: auto;
-        max-height: 200px;
-    }
-
-    .contact-form-container {
-        background-color: white;
-        padding: 30px;
-        border-radius: 8px;
-    }
-
-    .heading {
-        font-size: 2rem;
-        margin-bottom: 25px;
-        text-align: center;
-        font-weight: 600;
-        color: #333;
-    }
-
-    .btn-submit {
-        background-color: #ff6600;
-        color: white;
-        padding: 10px 25px;
-        border: none;
-        border-radius: 5px;
-        transition: background 0.3s ease;
-    }
-
-    .btn-submit:hover {
-        background-color: #e65c00;
-    }
-
-    /*  */
-    .french-fries-section {
-        background-color: #000;
-        color: white;
-        padding: 40px 20px;
-        border-radius: 12px;
-        box-shadow: 0 0 20px rgba(255, 165, 0, 0.1);
-    }
-
-    .fries-image {
-        max-width: 100%;
-        border-radius: 10px;
-        transition: transform 0.3s ease;
-    }
-
-    .fries-image:hover {
-        transform: scale(1.05);
-    }
-
-    .fries-title {
-        font-size: 3rem;
-        font-weight: 700;
-        color: #ffa500;
-        margin-bottom: 20px;
-    }
-
-    .fries-description {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        margin-bottom: 30px;
-    }
-
-    .btn-order {
-        background-color: #ff6600;
-        padding: 10px 25px;
-        color: white;
-        font-weight: bold;
-        text-decoration: none;
-        border-radius: 6px;
-        transition: background 0.3s ease;
-    }
-
-    .btn-order:hover {
-        background-color: #e65c00;
-    }
-</style>
 
 <body>
+    <!-- NAVBAR -->
     <nav class="navbar">
-        <div class="navbar-logo">
-            <img src="output-onlinepngtools-removebg-preview.png" alt="Logo">
+        <div class="navbar-left">
+            <div class="navbar-logo">
+                <img src="output-onlinepngtools-removebg-preview.png" alt="Logo" />
+            </div>
+            <div class="navbar-marquee-wrapper">
+                <div class="marquee-container">
+                    <span class="navbar-marquee">220 YEAR OF TRUST</span>
+                </div>
+            </div>
         </div>
+
         <div class="navbar-toggle" id="navbar-toggle">
             <span></span>
             <span></span>
             <span></span>
         </div>
-        <div class="navbar-menu" id="navbar-menu">
 
+        <div class="navbar-menu" id="navbar-menu">
             <a href="index.html">
-                <img src="home.png" alt="Home Icon" style="width: 20px; vertical-align: middle; margin-right: 5px;">
-                <!-- Home -->
+                <img src="logonew.png" alt="Home" style="width: 20px; vertical-align: middle;">
             </a>
-            <a href="#">Products</a>
-            <a href="#">Recipe</a>
-            <a href="#">About Us</a>
-            <a href="contact.html">Contact Us</a>
-            <!-- <a href="#"></a>
-          <a href="#">Product</a> -->
+            <div class="dropdown" id="dropdown">
+                <button class="dropbtn">PRODUCTS ▾</button>
+                <div class="dropdown-content">
+                    <a href="redirect1.html">FRENCH FRIES</a>
+                    <a href="burgerpatti.html">BURGER PATTIES</a>
+                    <a href="potatoweges.html">POTATO WEGES</a>
+                    <a href="allo.html">ALOO TAKKI</a>
+                    <a href="HashBRown.html">HASH BROWN</a>
+                </div>
+            </div>
+            <a href="about.html">ABOUT US</a>
+            <a href="#">EVENTS</a>
+            <a href="#">FAQ</a>
+            <a href="contact.html">CONTACT US</a>
         </div>
     </nav>
-    <!-- image -->
+    <!--  -->
     <div class="container french-fries-section mt-5">
         <div class="row align-items-center">
-            <!-- Image Left -->
+            <!-- image Left -->
             <div class="col-md-6 text-center">
-                <img src="slider15.jpg" alt="French Fries" class="img-fluid fries-image" />
+                <img src="f3.jpg" alt="French Fries" class="img-fluid fries-image" />
             </div>
 
             <!-- Text Right -->
             <div class="col-md-6 fries-content">
-                <h2 class="fries-title">French Fries</h2>
+                <h3 class="fries-title">Hash Brown</h3>
                 <p class="fries-description">
-                    Crispy on the outside, soft and fluffy on the inside — our French Fries are made from the finest
-                    potatoes,
-                    seasoned to perfection and fried in pure, high-quality oil. Perfect for a quick Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero cum aut soluta est doloremque nesciunt laudantium eveniet ad non quas mollitia optio dignissimos fugiat necessitatibus voluptate consectetur repudiandae vel totam, repellat quod! Velit maiores adipisci consequatur maxime odit aliquid totam cum fugiat voluptates quo omnis sunt deserunt ab rerum architecto ipsum quis, sapiente eveniet accusamus fuga!snack or a tasty
-                    side!
+                    <h4>
+                        <img src="NB2.png" alt="Fries Icon" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;">
+                        Crispy
+                    </h4>
+                    <br>
+                    <h4>
+                        <img src="NB2.png" alt="Fries Icon" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;">
+                        Yummy
+                    </h4>
+                    <br>
+                    <h5>Indulge in the YUMWAY crispy Golden fries, bursting with natural Flavours, delivering pure Potato bliss.</h5>
+                    <br>
+                    <h5>Yumway fries remain deliciously crispy, sprinkled with love making them ultimate treat for any occasion and Favourite for all age groups</h5>
+                    <br>
+                    <h5>A perfect quick ready in 3 min yummy snack.</h5>
+                    <button class="btn btn-primary mt-3" data-bs-toggle="collapse" data-bs-target="#moreInfo">Read More</button>
                 </p>
-                <!-- <a href="order.html" class="btn btn-order">Order Now</a> -->
+            </div>
+        </div>
+        <!-- Collapsible content in a new row for desktop -->
+        <div class="row">
+            <div class="col-12">
+                <div id="moreInfo" class="collapse mt-3">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio.</p>
+                    <p>Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.</p>
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- OPTIONAL SCRIPT -->
+    <script>
+        const toggle = document.getElementById("navbar-toggle");
+        const menu = document.getElementById("navbar-menu");
+        const dropdown = document.getElementById("dropdown");
 
+        toggle.addEventListener("click", () => {
+            menu.classList.toggle("active");
+        });
 
-    <!-- Bootstrap JS (optional) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="script.js"></script>
+        dropdown.addEventListener("click", (e) => {
+            e.stopPropagation();
+            dropdown.classList.toggle("open");
+        });
+
+        document.addEventListener("click", () => {
+            dropdown.classList.remove("open");
+        });
+    </script>
 </body>
 
 </html>
