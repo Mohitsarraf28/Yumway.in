@@ -12,6 +12,7 @@ body {
   height: auto;
   flex-wrap: wrap;
   position: relative;
+
 }
 
 .navbar-left {
@@ -141,7 +142,7 @@ body {
 
 .navbar-menu a {
   color: #fdfdfd;
-  text-decoration: underline;
+  text-decoration: none;
   font-size: 1.1rem;
   font-family: Helvetica, sans-serif;
   font-weight: 550;
@@ -274,10 +275,11 @@ body {
   margin: 10px auto;
   width: 90%;
   max-width: 1200px;
+  
 }
 
 .logo {
-  height: 70px;
+  height: 80px;
   width: auto;
   display: block;
 }
