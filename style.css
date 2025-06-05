@@ -54,8 +54,8 @@ body {
   padding-top: 10px;
   height: 40px;
   position: relative;
-  margin-left: 40px; /* Avoid going under logo */
-  margin-right: 20px;
+  margin-left: 70px; /* Avoid going under logo */
+  margin-right: 70px;
 }
 
 .navbar-marquee {
